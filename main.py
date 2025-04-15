@@ -45,16 +45,21 @@ def to_do_application():
                         if not found:
                             print("Task not found: check spelling")
                             
-            elif menu_option == 3:
-                pass
+            elif int_menu_option == 3:
+                
+                if len(task_list) == 0:
+                    print("Task List is empty")
+                    continue
+                
+                print("Current Tasks")
+                for task in task_list:
+                    print(f"Task: {task}")
             
             else:
                 print("Invalid option, please choose 1-4.")
 
         except ValueError:
             print("Please enter a valid number!")
-        
-        finally:
-            print("Thank you Goodbye")
+
             
 to_do_application()
